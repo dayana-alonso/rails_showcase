@@ -1,10 +1,12 @@
 class VisitorsController < ApplicationController
 	# GET
 	def index
+		@visitors = Visitor.all
 	end
 
 	# GET
 	def show
+		@visitor = Visitor.find(params[:id])
 	end
 
 	# GET

@@ -1,1 +1,10 @@
-<h1>Hello</h1>
+<h1>Visitors</h1>
+
+<table>
+	<% @visitors.each do |visitor| %>
+		<tr>
+			<td><%= visitor.name %></td>
+			<td><%= link_to "show", visitor_path(visitor) %></td>
+		</tr>
+	<% end %>
+</table>
