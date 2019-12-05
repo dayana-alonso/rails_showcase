@@ -26,12 +26,19 @@ class VisitorsController < ApplicationController
 	end
 
 	# GET
-	def edit
+	def edit 
 		@visitor = Visitor.find(params[:id])
 	end
 
 	# PATCH
 	def update
+		@visitor = Visitor.find(params[:id])
+
+		if @visitor.update(strong_params)
+			redirect_to visitors_path notice: 'Visitor Successfylly Updated'
+		else
+			render 'edit'
+		end
 	end
 
 	# DELETE

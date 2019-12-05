@@ -5,6 +5,8 @@
 		<tr>
 			<td><%= visitor.name %></td>
 			<td><%= link_to "show", visitor_path(visitor) %></td>
+			<td><%= link_to "edit", edit_visitor_path(visitor) %></td>
+			<td><%= link_to "delete", visitor_path(visitor) %></td>
 		</tr>
 	<% end %>
 </table>
