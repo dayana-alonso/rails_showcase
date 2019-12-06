@@ -43,6 +43,9 @@ class VisitorsController < ApplicationController
 
 	# DELETE
 	def destroy
+		@visitor = Visitor.find(params[:id])
+			@visitor.destroy
+		redirect_to visitors_path
 	end
 		
 	private 
