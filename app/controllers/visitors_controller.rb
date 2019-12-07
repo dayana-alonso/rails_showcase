@@ -18,11 +18,10 @@ class VisitorsController < ApplicationController
 	def create
 		@visitor = Visitor.new(strong_params)
 		if @visitor.save
-			redirect_to new_visitor_path notice: 'Visitor Successfully Created'
+			redirect_to new_visitor_path, notice: 'Visitor Successfully Created'
 		else
 			render 'new'
 		end
-
 	end
 
 	# GET
@@ -33,9 +32,8 @@ class VisitorsController < ApplicationController
 	# PATCH
 	def update
 		@visitor = Visitor.find(params[:id])
-
 		if @visitor.update(strong_params)
-			redirect_to visitors_path notice: 'Visitor Successfylly Updated'
+			redirect_to visitors_path, notice: 'Visitor Successfylly Updated'
 		else
 			render 'edit'
 		end
