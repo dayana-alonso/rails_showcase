@@ -10,16 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_102627) do
+ActiveRecord::Schema.define(version: 2019_12_08_104829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "visitors", force: :cascade do |t|
-    t.string "name"
-    t.string "visitor_cardnumber"
+  create_table "cinemas", force: :cascade do |t|
+    t.bigint "visitor_id", null: false
+    t.string "cinema_name"
+    t.string "address"
+    t.string "postcode"
+    t.integer "telephone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["visitor_id"], name: "index_cinemas_on_visitor_id"
   end
 
+  create_table "visitors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "visitor_cardnumber"
+  end
+
+  add_foreign_key "cinemas", "visitors"
 end
