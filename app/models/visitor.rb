@@ -1,4 +1,4 @@
 class Visitor < ApplicationRecord
-	has_many :cinemas
+	belongs_to :cinema
 	validates :name, :visitor_cardnumber, presence: true
 end

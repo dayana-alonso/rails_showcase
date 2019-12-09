@@ -1,0 +1,12 @@
+<h1>Cinemas</h1>
+
+<table>
+	<% @cinemas.each do |cinema| %>
+		<tr>
+			<td><%= cinema.cinema_name %></td>
+			<td><%= link_to "show", cinemas_path(cinema) %></td>
+			<td><%= link_to "edit", edit_cinema_path(cinema) %></td>
+			<td><%= link_to "delete", cinema_path(cinema), method: :delete %></td>
+		</tr>
+	<% end %>
+</table>

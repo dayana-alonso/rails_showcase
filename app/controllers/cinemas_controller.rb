@@ -1,6 +1,6 @@
 class CinemasController < ApplicationController
 	def index
-		@cinemas = Cinemas.all
+		@cinemas = Cinema.all
 	end
 
 	def new
@@ -12,9 +12,12 @@ class CinemasController < ApplicationController
 	end
 
 	def create
-		@cinema = Cinema.new
+		@cinema = Cinema.new(strong_params)
 		if @cinema.save
-
+			redirect_to cinemas_path, notice: "New Cinema successfully created"
+		else 
+			render "new"
+		end
 	end
 
 	def delete

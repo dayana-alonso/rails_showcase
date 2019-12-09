@@ -1,4 +1,4 @@
 class Cinema < ApplicationRecord
-  belongs_to :visitor
+  has_many :visitors
   validates :cinema_name, :address, :postcode, :telephone, presence: true
 end

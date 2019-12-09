@@ -1,0 +1,14 @@
+<ul>
+	<% @cinema.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+
+<%= form_for @cinema do |f| %>
+	<p><%= f.text_field :visitor_id, placeholder: 'Visitor Id' %></p>
+	<p><%= f.text_area :cinema_name, placeholder: 'Cinema name' %></p>
+	<p><%= f.text_area :address, placeholder: 'address' %></p>
+	<p><%= f.text_area :postcode, placeholder: 'postcode' %></p>
+	<p><%= f.text_area :telephone, placeholder: 'telephone' %></p>
+	<p><%= f.submit 'Save Visitor'%></p>
+<% end %>
