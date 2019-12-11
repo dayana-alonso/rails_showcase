@@ -49,7 +49,7 @@ class VisitorsController < ApplicationController
 	private 
 
 	def strong_params
-		params.require(:visitor).permit(:name, :visitor_cardnumber)
+		params.require(:visitor).permit(:name, :visitor_cardnumber, :cinema_id)
 	end
 
 end
