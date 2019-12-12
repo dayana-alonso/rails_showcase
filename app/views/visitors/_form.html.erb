@@ -5,7 +5,8 @@
 </ul>
 
 <%= form_for @visitor do |f| %>
- 	<p><%= f.collection_select :cinema_id, Cinema.all,:id,:cinema_name, include_blank:'Please select Your Cinema' %></p>
+ 	<p><%= f.collection_select :cinema_id, Cinema.all,:id,:cinema_name, 
+ 		include_blank:'Please select Your Cinema' %></p>
 	<p><%= f.text_field :name, placeholder: 'Name' %></p>
 	<p><%= f.text_area :visitor_cardnumber, placeholder: 'Card number' %></p>
 	<p><%= f.submit 'Save Visitor'%></p>

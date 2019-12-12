@@ -1,18 +1,10 @@
 <h1>New Cinema</h1>
 
 <%= form_for @cinema do |f| %>
-	<select name="post[cinemas]" id="cinemas_id">
-	  <option value="1">Please select Your Cinema</option>
-	  <option value="2">Odeon</option>
-	 	<option value="3">Showcase</option>
-	  <option value="4">Odeon Delux</option>
-	  <option value="5">Vue Reading</option>
-	  <option value="6">London Royal Cinema</option>
-	  <option value="7">Showcase Cinema de Lux Reading</option>
-	</select>
-
+	<p><%= f.text_area :cinema_name, placeholder: 'cinema_name' %></p>
 	<p><%= f.text_area :address, placeholder: 'address' %></p>
 	<p><%= f.text_area :postcode, placeholder: 'postcode' %></p>
 	<p><%= f.text_area :telephone, placeholder: 'telephone' %></p>
 	<p><%= f.submit 'Save Cinema'%></p>
 <% end %>
+

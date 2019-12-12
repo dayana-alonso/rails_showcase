@@ -40,7 +40,7 @@ class CinemasController < ApplicationController
 	end
 
 	def strong_params
-		params.require(:cinema).permit(:visitor_id, :cinema_name, :address, :postcode, :telephone)
+		params.require(:cinema).permit(:visitor_id, :cinema_id, :cinema_name, :address, :postcode, :telephone)
 	end
 
 end
